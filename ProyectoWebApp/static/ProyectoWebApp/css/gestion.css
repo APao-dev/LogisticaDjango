@@ -160,7 +160,7 @@ p {
     position: relative;
     padding: 3rem;
     margin: 0.5rem;
-    background-color: rgba(24, 64, 8);
+    background-color: #1688a7e9;;
     color: cornsilk;
 }
 
@@ -268,4 +268,17 @@ ul.errorlist {
     padding-top: .75rem;
     font-style: italic;
     color: red;
+}
+.linksCategorias{
+    color: bisque !important;
+    text-decoration: underline;
+}
+
+.contenedorFormulario{
+    background-color: #4990a4d0;
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 6px;
+    padding: 10px 0;
+
 }

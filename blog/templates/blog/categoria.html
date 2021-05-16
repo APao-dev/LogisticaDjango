@@ -3,7 +3,7 @@
 
 <section>
     <div style="width: 75%; margin:auto; text-align:center; color:wheat">
-        Categorías: &nbsp;{% for post in posts %} {% for categoria in post.categorias.all %} <a href="{% url 'categoria' categoria.id %}" class="linksCategorias"> {{categoria.nombre}}</a> &nbsp;&nbsp;&nbsp; {% endfor %} {% endfor %}
+        Categorías: {% for post in posts %} {% for categoria in post.categorias.all %} {{categoria.nombre}} &nbsp;&nbsp;&nbsp; {% endfor %} {% endfor %}
 
     </div>
 </section>
