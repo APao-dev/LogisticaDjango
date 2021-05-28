@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import FormContacto
+
+from django.core.mail import  EmailMessage
 # Create your views here.
 
 def contacto(request):
@@ -12,7 +14,16 @@ def contacto(request):
             email=request.POST.get("email")
             consulta=request.POST.get("consulta")
 
-            return redirect("/contacto/?valido")
+            email= EmailMessage("Mensaje desde App Django", 
+            "El usuario con nombre {} con la dirección {} escribe lo siguiente {} ".format(nombre, email, consulta), "", ["apaofernandez10@gmail.com"], reply_to=[email])
+
+            try:
+                email.send() 
+
+                return redirect("/contacto/?valido")
+
+            except:
+                return redirect("/contacto/?invalido")
 
 
 
