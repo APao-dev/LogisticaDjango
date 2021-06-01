@@ -1,10 +1,40 @@
 {% extends "ProyectoWebApp/base.html" %} {% load static %} {% block content %}
 
-<div>
-    <p>
 
-    </p>
+<div class="container">
+
+    <div style="float: right;">
+        <p style="color: white;">Texto</p>
+
+    </div>
+<div class="row">
+
+{% for producto in productos %}
+
+<div class="col-md-3">
+
+        <div class="card" style="width: 100%; height: 95%; margin: 5px 5px;">
+            <img src="{{producto.imagen.url}}" class="card-img-top">
+            
+            <div class="card-body" style="text-align: center;">
+                <h6 class="card-title">{{producto.nombre}}</h6>
+                <p class="card-text">$ {{producto.precio}}</p>
+            </div>
+
+            <div class="card-footer text-center">
+                <a href="#" class="btn btn-success">Agregar</a>
+
+            </div>
+
+        </div> 
+
+
+</div>
+{% endfor %} 
+</div>
 </div>
 
-
 {% endblock %}
+
+<!-- <span class="section-heading-lower">{{producto.nombre}}</span>
+                    <span class="section-heading-upper">{{producto.precio}}</span>    "-->
